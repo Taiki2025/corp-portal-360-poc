@@ -1,36 +1,64 @@
-# corp-portal-360-poc
+# 九州電力 法人営業ポータル POC
 
-法人顧客向けポータルUIのPOC。営業向け360°ビューをローカル環境で確認できる。
+法人顧客向け営業ポータルUIのPOC。営業向け360°ビューをローカル環境で確認できる。
 
 ## 主な機能
-- 360°ダッシュボード（契約・請求・使用量・案件・問い合わせ）
-- 顧客一覧/詳細（ナビゲーションから切り替え可能）
-- 簡易レコメンド（未入金フォロー等）
+- 3-6-3レイアウトによる営業ダッシュボード
+  - 左：当日カレンダー＋ToDo
+  - 中央：営業360°ビュー（契約・請求・使用量・案件）
+  - 右：AIアシスタント（社内ナレッジ・推奨アクション）
+- 顧客一覧/詳細
+- 案件ボード（かんばん形式）
+- 問い合わせ一覧
+- Guided Sellingによる営業プロセス支援
 
 ## 確認方法
 1. `index.html` をWebブラウザで開くだけ
 2. サーバー不要で静的HTMLとして動作
+3. 顧客セレクターから異なる顧客データを確認可能
 
-## データ
-- `data/*.json` にダミーデータ
-- 顧客セレクターから異なる顧客データを確認可能
+## 技術スタック
+- HTML/CSS/JavaScript
+- データは静的に埋め込み済み
+- サーバー不要で直接ブラウザで確認可能
 
 ## ディレクトリ構成
 ```
 /
-├─ index.html     # メインHTMLファイル
+├─ index.html     # メインHTMLファイル（ダッシュボード）
+├─ customers.html # 顧客一覧
+├─ opportunities.html # 案件ボード
+├─ tickets.html   # 問い合わせ一覧
 ├─ css/           # スタイルシート
 │  └─ style.css
-├─ js/            # JavaScriptファイル
-│  └─ script.js
-└─ data/          # ダミーデータ（JSON）
-   ├─ customers.json
-   ├─ contracts.json
-   ├─ billings.json
-   ├─ usages.json
-   ├─ opportunities.json
-   └─ tickets.json
+└─ js/            # JavaScriptファイル
+   ├─ script.js      # ダッシュボード用
+   ├─ customers.js   # 顧客一覧用
+   ├─ opportunities.js # 案件ボード用
+   └─ tickets.js     # 問い合わせ一覧用
 ```
+
+## UIルール（九州電力営業向け）
+- 3-6-3 レイアウト（左:予定/中央:営業情報/右:AI支援）
+- Guided Selling による営業プロセス支援
+- カスタマイズ可能なダッシュボード
+- アクセシビリティ対応（色+アイコン+ラベルで状態表示）
+
+### デザイントークン
+- カラー
+  - kyuden-blue: #0975B9 （九州電力の企業カラー）
+  - info-blue: #007BFF （情報）
+  - warn-orange: #FFA500 （警告）
+  - error-red: #DC3545 （重要）
+
+- タイポグラフィ
+  - 見出し: 1.25rem / Bold
+  - 本文: 1rem / Regular
+  - 補助: 0.875rem / Regular, muted color
+
+- グリッド・間隔
+  - 12カラムグリッド
+  - ガター: 24px（md以上）、16px（sm以下）
 
 ## 注意事項
 - POC用途のみ

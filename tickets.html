@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>問い合わせ一覧 - 法人お客さまサイト</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+  </style>
 </head>
 <body>
   <!-- ヘッダー -->
@@ -48,22 +56,24 @@
       </div>
     </div>
     
-    <div class="table-container">
-      <table id="tickets-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>顧客名</th>
-            <th>種別</th>
-            <th>優先度</th>
-            <th>状態</th>
-            <th>受付日</th>
-          </tr>
-        </thead>
-        <tbody id="tickets-tbody">
-          <!-- JavaScriptで動的に生成 -->
-        </tbody>
-      </table>
+    <div class="card">
+      <div class="table-container">
+        <table id="tickets-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>顧客名</th>
+              <th>種別</th>
+              <th>優先度</th>
+              <th>状態</th>
+              <th>受付日</th>
+            </tr>
+          </thead>
+          <tbody id="tickets-tbody">
+            <!-- JavaScriptで動的に生成 -->
+          </tbody>
+        </table>
+      </div>
     </div>
   </main>
   

@@ -1,49 +1,156 @@
-// データの読み込み
-let customers = [];
-let contracts = [];
-let billings = [];
-let usages = [];
-let opportunities = [];
-let tickets = [];
+// 静的データ
+const customers = [
+  {
+    "id": "C-001",
+    "name": "九州テック",
+    "industry": "製造",
+    "size": "大",
+    "owner": "山田",
+    "tags": ["高圧"],
+    "contractIds": ["K-1100-001"],
+    "billingIds": ["B-2025-07"],
+    "usageIds": ["U-2025-07"],
+    "opportunityIds": ["O-RE-001"],
+    "ticketIds": ["T-001"]
+  },
+  {
+    "id": "C-002",
+    "name": "北海道物流",
+    "industry": "物流",
+    "size": "中",
+    "owner": "鈴木",
+    "tags": ["高圧", "複数拠点"],
+    "contractIds": ["K-1100-002"],
+    "billingIds": ["B-2025-07-002"],
+    "usageIds": ["U-2025-07-002"],
+    "opportunityIds": ["O-RE-002"],
+    "ticketIds": ["T-002"]
+  },
+  {
+    "id": "C-003",
+    "name": "東京データセンター",
+    "industry": "IT",
+    "size": "大",
+    "owner": "佐藤",
+    "tags": ["特別高圧", "重要顧客"],
+    "contractIds": ["K-1100-003"],
+    "billingIds": ["B-2025-07-003"],
+    "usageIds": ["U-2025-07-003"],
+    "opportunityIds": ["O-RE-003"],
+    "ticketIds": ["T-003"]
+  },
+  {
+    "id": "C-004",
+    "name": "大阪食品",
+    "industry": "食品",
+    "size": "中",
+    "owner": "田中",
+    "tags": ["高圧", "省エネ推進"],
+    "contractIds": ["K-1100-004"],
+    "billingIds": ["B-2025-07-004"],
+    "usageIds": ["U-2025-07-004"],
+    "opportunityIds": ["O-RE-004"],
+    "ticketIds": ["T-004"]
+  },
+  {
+    "id": "C-005",
+    "name": "名古屋自動車",
+    "industry": "自動車",
+    "size": "大",
+    "owner": "伊藤",
+    "tags": ["特別高圧", "重要顧客", "省エネ推進"],
+    "contractIds": ["K-1100-005"],
+    "billingIds": ["B-2025-07-005"],
+    "usageIds": ["U-2025-07-005"],
+    "opportunityIds": ["O-RE-005"],
+    "ticketIds": ["T-005"]
+  }
+];
+
+const contracts = [
+  {"id":"K-1100-001","customerId":"C-001","menu":"高圧電力A","kW":500,"status":"有効","start":"2024-04-01"},
+  {"id":"K-1100-002","customerId":"C-002","menu":"高圧電力B","kW":300,"status":"有効","start":"2024-03-15"},
+  {"id":"K-1100-003","customerId":"C-003","menu":"特別高圧電力","kW":2000,"status":"有効","start":"2023-10-01"},
+  {"id":"K-1100-004","customerId":"C-004","menu":"高圧電力A","kW":400,"status":"有効","start":"2024-01-20"},
+  {"id":"K-1100-005","customerId":"C-005","menu":"特別高圧電力","kW":1800,"status":"有効","start":"2023-08-10"}
+];
+
+const billings = [
+  {"id":"B-2025-07","customerId":"C-001","month":"2025-07","amount":1250000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06","customerId":"C-001","month":"2025-06","amount":1180000,"due":"2025-07-15","status":"入金済"},
+  {"id":"B-2025-07-002","customerId":"C-002","month":"2025-07","amount":850000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06-002","customerId":"C-002","month":"2025-06","amount":820000,"due":"2025-07-15","status":"入金済"},
+  {"id":"B-2025-07-003","customerId":"C-003","month":"2025-07","amount":4500000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06-003","customerId":"C-003","month":"2025-06","amount":4350000,"due":"2025-07-15","status":"入金済"},
+  {"id":"B-2025-07-004","customerId":"C-004","month":"2025-07","amount":950000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06-004","customerId":"C-004","month":"2025-06","amount":920000,"due":"2025-07-15","status":"入金済"},
+  {"id":"B-2025-07-005","customerId":"C-005","month":"2025-07","amount":3800000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06-005","customerId":"C-005","month":"2025-06","amount":3650000,"due":"2025-07-15","status":"入金済"}
+];
+
+const usages = [
+  {"id":"U-2025-07","customerId":"C-001","month":"2025-07","kWh":125000},
+  {"id":"U-2025-06","customerId":"C-001","month":"2025-06","kWh":118000},
+  {"id":"U-2025-05","customerId":"C-001","month":"2025-05","kWh":120000},
+  {"id":"U-2025-04","customerId":"C-001","month":"2025-04","kWh":115000},
+  {"id":"U-2025-03","customerId":"C-001","month":"2025-03","kWh":122000},
+  {"id":"U-2025-02","customerId":"C-001","month":"2025-02","kWh":130000},
+  {"id":"U-2025-01","customerId":"C-001","month":"2025-01","kWh":135000},
+  {"id":"U-2024-12","customerId":"C-001","month":"2024-12","kWh":140000},
+  {"id":"U-2024-11","customerId":"C-001","month":"2024-11","kWh":128000},
+  {"id":"U-2024-10","customerId":"C-001","month":"2024-10","kWh":120000},
+  {"id":"U-2024-09","customerId":"C-001","month":"2024-09","kWh":115000},
+  {"id":"U-2024-08","customerId":"C-001","month":"2024-08","kWh":110000},
+  
+  {"id":"U-2025-07-002","customerId":"C-002","month":"2025-07","kWh":85000},
+  {"id":"U-2025-06-002","customerId":"C-002","month":"2025-06","kWh":82000},
+  {"id":"U-2025-05-002","customerId":"C-002","month":"2025-05","kWh":80000},
+  
+  {"id":"U-2025-07-003","customerId":"C-003","month":"2025-07","kWh":450000},
+  {"id":"U-2025-06-003","customerId":"C-003","month":"2025-06","kWh":435000},
+  {"id":"U-2025-05-003","customerId":"C-003","month":"2025-05","kWh":440000},
+  
+  {"id":"U-2025-07-004","customerId":"C-004","month":"2025-07","kWh":95000},
+  {"id":"U-2025-06-004","customerId":"C-004","month":"2025-06","kWh":92000},
+  {"id":"U-2025-05-004","customerId":"C-004","month":"2025-05","kWh":93000},
+  
+  {"id":"U-2025-07-005","customerId":"C-005","month":"2025-07","kWh":380000},
+  {"id":"U-2025-06-005","customerId":"C-005","month":"2025-06","kWh":365000},
+  {"id":"U-2025-05-005","customerId":"C-005","month":"2025-05","kWh":370000}
+];
+
+const opportunities = [
+  {"id":"O-RE-001","customerId":"C-001","name":"省エネ設備導入","amount":5000000,"stage":"提案中","due":"2025-09-30","next":"見積提示"},
+  {"id":"O-RE-002","customerId":"C-002","name":"太陽光発電導入","amount":8000000,"stage":"初期検討","due":"2025-10-15","next":"現地調査"},
+  {"id":"O-RE-003","customerId":"C-003","name":"UPS更新","amount":15000000,"stage":"契約準備","due":"2025-08-20","next":"契約書確認"},
+  {"id":"O-RE-004","customerId":"C-004","name":"冷凍設備効率化","amount":7000000,"stage":"ニーズ確認","due":"2025-11-10","next":"ヒアリング"},
+  {"id":"O-RE-005","customerId":"C-005","name":"EV充電設備","amount":12000000,"stage":"提案中","due":"2025-09-15","next":"プレゼン"}
+];
+
+const tickets = [
+  {"id":"T-001","customerId":"C-001","type":"問い合わせ","priority":"中","status":"対応中","opened":"2025-07-05"},
+  {"id":"T-002","customerId":"C-002","type":"障害","priority":"高","status":"対応中","opened":"2025-07-08"},
+  {"id":"T-003","customerId":"C-003","type":"工事","priority":"中","status":"予定","opened":"2025-07-01"},
+  {"id":"T-004","customerId":"C-004","type":"問い合わせ","priority":"低","status":"完了","opened":"2025-06-28"},
+  {"id":"T-005","customerId":"C-005","type":"障害","priority":"高","status":"対応中","opened":"2025-07-07"}
+];
 
 // 現在選択されている顧客
 let selectedCustomer = null;
 
 // ページ読み込み時の処理
-document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    // データの読み込み
-    customers = await fetchJSON('data/customers.json');
-    contracts = await fetchJSON('data/contracts.json');
-    billings = await fetchJSON('data/billings.json');
-    usages = await fetchJSON('data/usages.json');
-    opportunities = await fetchJSON('data/opportunities.json');
-    tickets = await fetchJSON('data/tickets.json');
-    
-    // 顧客セレクターの初期化
-    initCustomerSelector();
-    
-    // 最初の顧客を選択
-    if (customers.length > 0) {
-      selectCustomer(customers[0].id);
-    }
-    
-    // ナビゲーションの初期化
-    initNavigation();
-  } catch (error) {
-    console.error('データの読み込みに失敗しました:', error);
-    showError('データの読み込みに失敗しました。ページを再読み込みしてください。');
+document.addEventListener('DOMContentLoaded', () => {
+  // 顧客セレクターの初期化
+  initCustomerSelector();
+  
+  // 最初の顧客を選択
+  if (customers.length > 0) {
+    selectCustomer(customers[0].id);
   }
+  
+  // ナビゲーションの初期化
+  initNavigation();
 });
-
-// JSONデータを取得する関数
-async function fetchJSON(url) {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`HTTP error ${response.status}`);
-  }
-  return await response.json();
-}
 
 // 顧客セレクターの初期化
 function initCustomerSelector() {
@@ -90,8 +197,6 @@ function initNavigation() {
       // アクティブクラスを切り替え
       navItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
-      
-      // ここで画面切り替えの処理を行う（今回はダッシュボードのみ）
     });
   });
 }
