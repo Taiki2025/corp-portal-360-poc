@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>問い合わせ一覧 - 法人お客さまサイト</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="header-container">
+      <h1 class="header-title">法人お客さまポータル</h1>
+      <div class="header-actions">
+        <button class="header-button">ヘルプ</button>
+        <button class="header-button">設定</button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- ナビゲーション -->
+  <nav>
+    <div class="nav-container">
+      <a class="nav-item" href="index.html">ダッシュボード</a>
+      <a class="nav-item" href="customers.html">顧客一覧</a>
+      <a class="nav-item" href="opportunities.html">案件ボード</a>
+      <a class="nav-item active" href="tickets.html">問い合わせ一覧</a>
+    </div>
+  </nav>
+  
+  <!-- メインコンテンツ -->
+  <main>
+    <div class="page-title">
+      <h1>問い合わせ一覧</h1>
+      <div class="filter-controls">
+        <select id="priority-filter" class="filter-select">
+          <option value="">すべての優先度</option>
+          <option value="高">高</option>
+          <option value="中">中</option>
+          <option value="低">低</option>
+        </select>
+        <select id="status-filter" class="filter-select">
+          <option value="">すべての状態</option>
+          <option value="対応中">対応中</option>
+          <option value="予定">予定</option>
+          <option value="完了">完了</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="table-container">
+      <table id="tickets-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>顧客名</th>
+            <th>種別</th>
+            <th>優先度</th>
+            <th>状態</th>
+            <th>受付日</th>
+          </tr>
+        </thead>
+        <tbody id="tickets-tbody">
+          <!-- JavaScriptで動的に生成 -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+  
+  <!-- フッター -->
+  <footer>
+    &copy; 2024 法人お客さまポータル POC
+  </footer>
+  
+  <script src="js/tickets.js"></script>
+</body>
+</html>

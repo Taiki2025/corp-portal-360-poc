@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件ボード - 法人お客さまサイト</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="header-container">
+      <h1 class="header-title">法人お客さまポータル</h1>
+      <div class="header-actions">
+        <button class="header-button">ヘルプ</button>
+        <button class="header-button">設定</button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- ナビゲーション -->
+  <nav>
+    <div class="nav-container">
+      <a class="nav-item" href="index.html">ダッシュボード</a>
+      <a class="nav-item" href="customers.html">顧客一覧</a>
+      <a class="nav-item active" href="opportunities.html">案件ボード</a>
+      <a class="nav-item" href="tickets.html">問い合わせ一覧</a>
+    </div>
+  </nav>
+  
+  <!-- メインコンテンツ -->
+  <main>
+    <div class="page-title">
+      <h1>案件ボード</h1>
+    </div>
+    
+    <div class="kanban-board">
+      <div class="kanban-column">
+        <h2 class="kanban-title">初期検討</h2>
+        <div class="kanban-items" id="initial-stage">
+          <!-- JavaScriptで動的に生成 -->
+        </div>
+      </div>
+      
+      <div class="kanban-column">
+        <h2 class="kanban-title">ニーズ確認</h2>
+        <div class="kanban-items" id="needs-stage">
+          <!-- JavaScriptで動的に生成 -->
+        </div>
+      </div>
+      
+      <div class="kanban-column">
+        <h2 class="kanban-title">提案中</h2>
+        <div class="kanban-items" id="proposal-stage">
+          <!-- JavaScriptで動的に生成 -->
+        </div>
+      </div>
+      
+      <div class="kanban-column">
+        <h2 class="kanban-title">契約準備</h2>
+        <div class="kanban-items" id="contract-stage">
+          <!-- JavaScriptで動的に生成 -->
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- フッター -->
+  <footer>
+    &copy; 2024 法人お客さまポータル POC
+  </footer>
+  
+  <script src="js/opportunities.js"></script>
+</body>
+</html>

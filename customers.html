@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>顧客一覧 - 法人お客さまサイト</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="header-container">
+      <h1 class="header-title">法人お客さまポータル</h1>
+      <div class="header-actions">
+        <button class="header-button">ヘルプ</button>
+        <button class="header-button">設定</button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- ナビゲーション -->
+  <nav>
+    <div class="nav-container">
+      <a class="nav-item" href="index.html">ダッシュボード</a>
+      <a class="nav-item active" href="customers.html">顧客一覧</a>
+      <a class="nav-item" href="opportunities.html">案件ボード</a>
+      <a class="nav-item" href="tickets.html">問い合わせ一覧</a>
+    </div>
+  </nav>
+  
+  <!-- メインコンテンツ -->
+  <main>
+    <div class="page-title">
+      <h1>顧客一覧</h1>
+      <div class="customer-search">
+        <input type="text" id="search-input" placeholder="顧客名、業種、担当者で検索..." class="search-input">
+      </div>
+    </div>
+    
+    <div class="table-container">
+      <table id="customers-table">
+        <thead>
+          <tr>
+            <th>顧客名</th>
+            <th>業種</th>
+            <th>規模</th>
+            <th>担当者</th>
+            <th>タグ</th>
+            <th>アクション</th>
+          </tr>
+        </thead>
+        <tbody id="customers-tbody">
+          <!-- JavaScriptで動的に生成 -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+  
+  <!-- フッター -->
+  <footer>
+    &copy; 2024 法人お客さまポータル POC
+  </footer>
+  
+  <script src="js/customers.js"></script>
+</body>
+</html>
