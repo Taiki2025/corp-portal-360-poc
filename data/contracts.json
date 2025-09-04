@@ -1,0 +1,7 @@
+[
+  {"id":"K-1100-001","customerId":"C-001","menu":"高圧電力A","kW":500,"status":"有効","start":"2024-04-01"},
+  {"id":"K-1100-002","customerId":"C-002","menu":"高圧電力B","kW":300,"status":"有効","start":"2024-03-15"},
+  {"id":"K-1100-003","customerId":"C-003","menu":"特別高圧電力","kW":2000,"status":"有効","start":"2023-10-01"},
+  {"id":"K-1100-004","customerId":"C-004","menu":"高圧電力A","kW":400,"status":"有効","start":"2024-01-20"},
+  {"id":"K-1100-005","customerId":"C-005","menu":"特別高圧電力","kW":1800,"status":"有効","start":"2023-08-10"}
+]
