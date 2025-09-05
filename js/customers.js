@@ -64,6 +64,71 @@ const customers = [
     "usageIds": ["U-2025-07-005"],
     "opportunityIds": ["O-RE-005"],
     "ticketIds": ["T-005"]
+  },
+  {
+    "id": "C-006",
+    "name": "福岡銀行",
+    "industry": "金融",
+    "size": "大",
+    "owner": "営業部 金融担当",
+    "tags": ["特別高圧", "金融", "重要顧客"],
+    "contractIds": ["K-1100-006"],
+    "billingIds": ["B-2025-07-006"],
+    "usageIds": ["U-2025-07-006"],
+    "opportunityIds": ["O-RE-006"],
+    "ticketIds": ["T-006"]
+  },
+  {
+    "id": "C-007",
+    "name": "宮崎リゾートホテル",
+    "industry": "観光",
+    "size": "中",
+    "owner": "施設管理部 担当",
+    "tags": ["高圧", "宿泊", "省エネ推進"],
+    "contractIds": ["K-1100-007"],
+    "billingIds": ["B-2025-07-007"],
+    "usageIds": ["U-2025-07-007"],
+    "opportunityIds": ["O-RE-007"],
+    "ticketIds": ["T-007"]
+  },
+  {
+    "id": "C-008",
+    "name": "熊本建設株式会社",
+    "industry": "建設",
+    "size": "大",
+    "owner": "土木部 担当",
+    "tags": ["高圧", "建設", "複数拠点"],
+    "contractIds": ["K-1100-008"],
+    "billingIds": ["B-2025-07-008"],
+    "usageIds": ["U-2025-07-008"],
+    "opportunityIds": ["O-RE-008"],
+    "ticketIds": ["T-008"]
+  },
+  {
+    "id": "C-009",
+    "name": "鹿児島保険サービス",
+    "industry": "保険",
+    "size": "小",
+    "owner": "営業所 担当",
+    "tags": ["低圧", "保険"],
+    "contractIds": ["K-1100-009"],
+    "billingIds": ["B-2025-07-009"],
+    "usageIds": ["U-2025-07-009"],
+    "opportunityIds": ["O-RE-009"],
+    "ticketIds": ["T-009"]
+  },
+  {
+    "id": "C-010",
+    "name": "佐賀ITソリューションズ",
+    "industry": "IT",
+    "size": "中",
+    "owner": "情報システム部",
+    "tags": ["高圧", "IT", "省エネ推進"],
+    "contractIds": ["K-1100-010"],
+    "billingIds": ["B-2025-07-010"],
+    "usageIds": ["U-2025-07-010"],
+    "opportunityIds": ["O-RE-010"],
+    "ticketIds": ["T-010"]
   }
 ];
 

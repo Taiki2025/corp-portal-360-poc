@@ -64,6 +64,71 @@ const customers = [
     "usageIds": ["U-2025-07-005"],
     "opportunityIds": ["O-RE-005"],
     "ticketIds": ["T-005"]
+  },
+  {
+    "id": "C-006",
+    "name": "福岡銀行",
+    "industry": "金融",
+    "size": "大",
+    "owner": "営業部 金融担当",
+    "tags": ["特別高圧", "金融", "重要顧客"],
+    "contractIds": ["K-1100-006"],
+    "billingIds": ["B-2025-07-006"],
+    "usageIds": ["U-2025-07-006"],
+    "opportunityIds": ["O-RE-006"],
+    "ticketIds": ["T-006"]
+  },
+  {
+    "id": "C-007",
+    "name": "宮崎リゾートホテル",
+    "industry": "観光",
+    "size": "中",
+    "owner": "施設管理部 担当",
+    "tags": ["高圧", "宿泊", "省エネ推進"],
+    "contractIds": ["K-1100-007"],
+    "billingIds": ["B-2025-07-007"],
+    "usageIds": ["U-2025-07-007"],
+    "opportunityIds": ["O-RE-007"],
+    "ticketIds": ["T-007"]
+  },
+  {
+    "id": "C-008",
+    "name": "熊本建設株式会社",
+    "industry": "建設",
+    "size": "大",
+    "owner": "土木部 担当",
+    "tags": ["高圧", "建設", "複数拠点"],
+    "contractIds": ["K-1100-008"],
+    "billingIds": ["B-2025-07-008"],
+    "usageIds": ["U-2025-07-008"],
+    "opportunityIds": ["O-RE-008"],
+    "ticketIds": ["T-008"]
+  },
+  {
+    "id": "C-009",
+    "name": "鹿児島保険サービス",
+    "industry": "保険",
+    "size": "小",
+    "owner": "営業所 担当",
+    "tags": ["低圧", "保険"],
+    "contractIds": ["K-1100-009"],
+    "billingIds": ["B-2025-07-009"],
+    "usageIds": ["U-2025-07-009"],
+    "opportunityIds": ["O-RE-009"],
+    "ticketIds": ["T-009"]
+  },
+  {
+    "id": "C-010",
+    "name": "佐賀ITソリューションズ",
+    "industry": "IT",
+    "size": "中",
+    "owner": "情報システム部",
+    "tags": ["高圧", "IT", "省エネ推進"],
+    "contractIds": ["K-1100-010"],
+    "billingIds": ["B-2025-07-010"],
+    "usageIds": ["U-2025-07-010"],
+    "opportunityIds": ["O-RE-010"],
+    "ticketIds": ["T-010"]
   }
 ];
 
@@ -72,7 +137,12 @@ const tickets = [
   {"id":"T-002","customerId":"C-002","type":"障害","priority":"高","status":"対応中","opened":"2025-07-08"},
   {"id":"T-003","customerId":"C-003","type":"工事","priority":"中","status":"予定","opened":"2025-07-01"},
   {"id":"T-004","customerId":"C-004","type":"問い合わせ","priority":"低","status":"完了","opened":"2025-06-28"},
-  {"id":"T-005","customerId":"C-005","type":"障害","priority":"高","status":"対応中","opened":"2025-07-07"}
+  {"id":"T-005","customerId":"C-005","type":"障害","priority":"高","status":"対応中","opened":"2025-07-07"},
+  {"id":"T-006","customerId":"C-006","type":"問い合わせ","priority":"中","status":"対応中","opened":"2025-07-10"},
+  {"id":"T-007","customerId":"C-007","type":"工事","priority":"高","status":"予定","opened":"2025-07-12"},
+  {"id":"T-008","customerId":"C-008","type":"障害","priority":"中","status":"対応中","opened":"2025-07-09"},
+  {"id":"T-009","customerId":"C-009","type":"問い合わせ","priority":"低","status":"完了","opened":"2025-07-02"},
+  {"id":"T-010","customerId":"C-010","type":"工事","priority":"中","status":"予定","opened":"2025-07-15"}
 ];
 
 // フィルタリングされた問い合わせ一覧

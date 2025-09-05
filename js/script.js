@@ -64,6 +64,71 @@ const customers = [
     "usageIds": ["U-2025-07-005"],
     "opportunityIds": ["O-RE-005"],
     "ticketIds": ["T-005"]
+  },
+  {
+    "id": "C-006",
+    "name": "福岡銀行",
+    "industry": "金融",
+    "size": "大",
+    "owner": "営業部 金融担当",
+    "tags": ["特別高圧", "金融", "重要顧客"],
+    "contractIds": ["K-1100-006"],
+    "billingIds": ["B-2025-07-006"],
+    "usageIds": ["U-2025-07-006"],
+    "opportunityIds": ["O-RE-006"],
+    "ticketIds": ["T-006"]
+  },
+  {
+    "id": "C-007",
+    "name": "宮崎リゾートホテル",
+    "industry": "観光",
+    "size": "中",
+    "owner": "施設管理部 担当",
+    "tags": ["高圧", "宿泊", "省エネ推進"],
+    "contractIds": ["K-1100-007"],
+    "billingIds": ["B-2025-07-007"],
+    "usageIds": ["U-2025-07-007"],
+    "opportunityIds": ["O-RE-007"],
+    "ticketIds": ["T-007"]
+  },
+  {
+    "id": "C-008",
+    "name": "熊本建設株式会社",
+    "industry": "建設",
+    "size": "大",
+    "owner": "土木部 担当",
+    "tags": ["高圧", "建設", "複数拠点"],
+    "contractIds": ["K-1100-008"],
+    "billingIds": ["B-2025-07-008"],
+    "usageIds": ["U-2025-07-008"],
+    "opportunityIds": ["O-RE-008"],
+    "ticketIds": ["T-008"]
+  },
+  {
+    "id": "C-009",
+    "name": "鹿児島保険サービス",
+    "industry": "保険",
+    "size": "小",
+    "owner": "営業所 担当",
+    "tags": ["低圧", "保険"],
+    "contractIds": ["K-1100-009"],
+    "billingIds": ["B-2025-07-009"],
+    "usageIds": ["U-2025-07-009"],
+    "opportunityIds": ["O-RE-009"],
+    "ticketIds": ["T-009"]
+  },
+  {
+    "id": "C-010",
+    "name": "佐賀ITソリューションズ",
+    "industry": "IT",
+    "size": "中",
+    "owner": "情報システム部",
+    "tags": ["高圧", "IT", "省エネ推進"],
+    "contractIds": ["K-1100-010"],
+    "billingIds": ["B-2025-07-010"],
+    "usageIds": ["U-2025-07-010"],
+    "opportunityIds": ["O-RE-010"],
+    "ticketIds": ["T-010"]
   }
 ];
 
@@ -72,7 +137,12 @@ const contracts = [
   {"id":"K-1100-002","customerId":"C-002","menu":"高圧電力B","kW":300,"status":"有効","start":"2024-03-15"},
   {"id":"K-1100-003","customerId":"C-003","menu":"特別高圧電力","kW":2000,"status":"有効","start":"2023-10-01"},
   {"id":"K-1100-004","customerId":"C-004","menu":"高圧電力A","kW":400,"status":"有効","start":"2024-01-20"},
-  {"id":"K-1100-005","customerId":"C-005","menu":"特別高圧電力","kW":1800,"status":"有効","start":"2023-08-10"}
+  {"id":"K-1100-005","customerId":"C-005","menu":"特別高圧電力","kW":1800,"status":"有効","start":"2023-08-10"},
+  {"id":"K-1100-006","customerId":"C-006","menu":"特別高圧B","kW":1500,"status":"有効","start":"2020-01-01"},
+  {"id":"K-1100-007","customerId":"C-007","menu":"高圧電力A","kW":400,"status":"有効","start":"2021-05-01"},
+  {"id":"K-1100-008","customerId":"C-008","menu":"高圧電力B","kW":600,"status":"有効","start":"2022-04-01"},
+  {"id":"K-1100-009","customerId":"C-009","menu":"低圧電力","kW":80,"status":"有効","start":"2023-07-01"},
+  {"id":"K-1100-010","customerId":"C-010","menu":"高圧電力A","kW":350,"status":"有効","start":"2024-02-01"}
 ];
 
 const billings = [
@@ -85,7 +155,17 @@ const billings = [
   {"id":"B-2025-07-004","customerId":"C-004","month":"2025-07","amount":950000,"due":"2025-08-15","status":"未入金"},
   {"id":"B-2025-06-004","customerId":"C-004","month":"2025-06","amount":920000,"due":"2025-07-15","status":"入金済"},
   {"id":"B-2025-07-005","customerId":"C-005","month":"2025-07","amount":3800000,"due":"2025-08-15","status":"未入金"},
-  {"id":"B-2025-06-005","customerId":"C-005","month":"2025-06","amount":3650000,"due":"2025-07-15","status":"入金済"}
+  {"id":"B-2025-06-005","customerId":"C-005","month":"2025-06","amount":3650000,"due":"2025-07-15","status":"入金済"},
+  {"id":"B-2025-07-006","customerId":"C-006","month":"2025-07","amount":3200000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06-006","customerId":"C-006","month":"2025-06","amount":3150000,"due":"2025-07-15","status":"入金済"},
+  {"id":"B-2025-07-007","customerId":"C-007","month":"2025-07","amount":980000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06-007","customerId":"C-007","month":"2025-06","amount":1050000,"due":"2025-07-15","status":"入金済"},
+  {"id":"B-2025-07-008","customerId":"C-008","month":"2025-07","amount":1350000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06-008","customerId":"C-008","month":"2025-06","amount":1280000,"due":"2025-07-15","status":"入金済"},
+  {"id":"B-2025-07-009","customerId":"C-009","month":"2025-07","amount":180000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06-009","customerId":"C-009","month":"2025-06","amount":175000,"due":"2025-07-15","status":"入金済"},
+  {"id":"B-2025-07-010","customerId":"C-010","month":"2025-07","amount":850000,"due":"2025-08-15","status":"未入金"},
+  {"id":"B-2025-06-010","customerId":"C-010","month":"2025-06","amount":820000,"due":"2025-07-15","status":"入金済"}
 ];
 
 const usages = [
@@ -157,7 +237,77 @@ const usages = [
   {"id":"U-2024-11-005","customerId":"C-005","month":"2024-11","kWh":378000},
   {"id":"U-2024-10-005","customerId":"C-005","month":"2024-10","kWh":372000},
   {"id":"U-2024-09-005","customerId":"C-005","month":"2024-09","kWh":368000},
-  {"id":"U-2024-08-005","customerId":"C-005","month":"2024-08","kWh":362000}
+  {"id":"U-2024-08-005","customerId":"C-005","month":"2024-08","kWh":362000},
+  
+  // 福岡銀行 (C-006)
+  {"id":"U-2025-07-006","customerId":"C-006","month":"2025-07","kWh":320000},
+  {"id":"U-2025-06-006","customerId":"C-006","month":"2025-06","kWh":315000},
+  {"id":"U-2025-05-006","customerId":"C-006","month":"2025-05","kWh":310000},
+  {"id":"U-2025-04-006","customerId":"C-006","month":"2025-04","kWh":305000},
+  {"id":"U-2025-03-006","customerId":"C-006","month":"2025-03","kWh":312000},
+  {"id":"U-2025-02-006","customerId":"C-006","month":"2025-02","kWh":318000},
+  {"id":"U-2025-01-006","customerId":"C-006","month":"2025-01","kWh":325000},
+  {"id":"U-2024-12-006","customerId":"C-006","month":"2024-12","kWh":330000},
+  {"id":"U-2024-11-006","customerId":"C-006","month":"2024-11","kWh":322000},
+  {"id":"U-2024-10-006","customerId":"C-006","month":"2024-10","kWh":318000},
+  {"id":"U-2024-09-006","customerId":"C-006","month":"2024-09","kWh":315000},
+  {"id":"U-2024-08-006","customerId":"C-006","month":"2024-08","kWh":310000},
+  
+  // 宮崎リゾートホテル (C-007)
+  {"id":"U-2025-07-007","customerId":"C-007","month":"2025-07","kWh":110000},
+  {"id":"U-2025-06-007","customerId":"C-007","month":"2025-06","kWh":115000},
+  {"id":"U-2025-05-007","customerId":"C-007","month":"2025-05","kWh":105000},
+  {"id":"U-2025-04-007","customerId":"C-007","month":"2025-04","kWh":100000},
+  {"id":"U-2025-03-007","customerId":"C-007","month":"2025-03","kWh":98000},
+  {"id":"U-2025-02-007","customerId":"C-007","month":"2025-02","kWh":95000},
+  {"id":"U-2025-01-007","customerId":"C-007","month":"2025-01","kWh":102000},
+  {"id":"U-2024-12-007","customerId":"C-007","month":"2024-12","kWh":120000},
+  {"id":"U-2024-11-007","customerId":"C-007","month":"2024-11","kWh":110000},
+  {"id":"U-2024-10-007","customerId":"C-007","month":"2024-10","kWh":105000},
+  {"id":"U-2024-09-007","customerId":"C-007","month":"2024-09","kWh":108000},
+  {"id":"U-2024-08-007","customerId":"C-007","month":"2024-08","kWh":118000},
+  
+  // 熊本建設株式会社 (C-008)
+  {"id":"U-2025-07-008","customerId":"C-008","month":"2025-07","kWh":150000},
+  {"id":"U-2025-06-008","customerId":"C-008","month":"2025-06","kWh":145000},
+  {"id":"U-2025-05-008","customerId":"C-008","month":"2025-05","kWh":148000},
+  {"id":"U-2025-04-008","customerId":"C-008","month":"2025-04","kWh":142000},
+  {"id":"U-2025-03-008","customerId":"C-008","month":"2025-03","kWh":140000},
+  {"id":"U-2025-02-008","customerId":"C-008","month":"2025-02","kWh":138000},
+  {"id":"U-2025-01-008","customerId":"C-008","month":"2025-01","kWh":135000},
+  {"id":"U-2024-12-008","customerId":"C-008","month":"2024-12","kWh":132000},
+  {"id":"U-2024-11-008","customerId":"C-008","month":"2024-11","kWh":130000},
+  {"id":"U-2024-10-008","customerId":"C-008","month":"2024-10","kWh":128000},
+  {"id":"U-2024-09-008","customerId":"C-008","month":"2024-09","kWh":135000},
+  {"id":"U-2024-08-008","customerId":"C-008","month":"2024-08","kWh":140000},
+  
+  // 鹿児島保険サービス (C-009)
+  {"id":"U-2025-07-009","customerId":"C-009","month":"2025-07","kWh":18000},
+  {"id":"U-2025-06-009","customerId":"C-009","month":"2025-06","kWh":17500},
+  {"id":"U-2025-05-009","customerId":"C-009","month":"2025-05","kWh":17800},
+  {"id":"U-2025-04-009","customerId":"C-009","month":"2025-04","kWh":18200},
+  {"id":"U-2025-03-009","customerId":"C-009","month":"2025-03","kWh":18500},
+  {"id":"U-2025-02-009","customerId":"C-009","month":"2025-02","kWh":19000},
+  {"id":"U-2025-01-009","customerId":"C-009","month":"2025-01","kWh":19500},
+  {"id":"U-2024-12-009","customerId":"C-009","month":"2024-12","kWh":19200},
+  {"id":"U-2024-11-009","customerId":"C-009","month":"2024-11","kWh":18800},
+  {"id":"U-2024-10-009","customerId":"C-009","month":"2024-10","kWh":18500},
+  {"id":"U-2024-09-009","customerId":"C-009","month":"2024-09","kWh":18200},
+  {"id":"U-2024-08-009","customerId":"C-009","month":"2024-08","kWh":18000},
+  
+  // 佐賀ITソリューションズ (C-010)
+  {"id":"U-2025-07-010","customerId":"C-010","month":"2025-07","kWh":85000},
+  {"id":"U-2025-06-010","customerId":"C-010","month":"2025-06","kWh":82000},
+  {"id":"U-2025-05-010","customerId":"C-010","month":"2025-05","kWh":83000},
+  {"id":"U-2025-04-010","customerId":"C-010","month":"2025-04","kWh":81000},
+  {"id":"U-2025-03-010","customerId":"C-010","month":"2025-03","kWh":80000},
+  {"id":"U-2025-02-010","customerId":"C-010","month":"2025-02","kWh":79000},
+  {"id":"U-2025-01-010","customerId":"C-010","month":"2025-01","kWh":78000},
+  {"id":"U-2024-12-010","customerId":"C-010","month":"2024-12","kWh":80000},
+  {"id":"U-2024-11-010","customerId":"C-010","month":"2024-11","kWh":82000},
+  {"id":"U-2024-10-010","customerId":"C-010","month":"2024-10","kWh":84000},
+  {"id":"U-2024-09-010","customerId":"C-010","month":"2024-09","kWh":83000},
+  {"id":"U-2024-08-010","customerId":"C-010","month":"2024-08","kWh":81000}
 ];
 
 const opportunities = [
@@ -165,7 +315,12 @@ const opportunities = [
   {"id":"O-RE-002","customerId":"C-002","name":"太陽光発電導入","amount":8000000,"stage":"初期検討","due":"2025-10-15","next":"現地調査"},
   {"id":"O-RE-003","customerId":"C-003","name":"UPS更新","amount":15000000,"stage":"契約準備","due":"2025-08-20","next":"契約書確認"},
   {"id":"O-RE-004","customerId":"C-004","name":"冷凍設備効率化","amount":7000000,"stage":"ニーズ確認","due":"2025-11-10","next":"ヒアリング"},
-  {"id":"O-RE-005","customerId":"C-005","name":"EV充電設備","amount":12000000,"stage":"提案中","due":"2025-09-15","next":"プレゼン"}
+  {"id":"O-RE-005","customerId":"C-005","name":"EV充電設備","amount":12000000,"stage":"提案中","due":"2025-09-15","next":"プレゼン"},
+  {"id":"O-RE-006","customerId":"C-006","name":"データセンター省エネ化","amount":18000000,"stage":"提案中","due":"2025-09-10","next":"見積提示"},
+  {"id":"O-RE-007","customerId":"C-007","name":"空調設備更新","amount":9500000,"stage":"初期検討","due":"2025-10-30","next":"現地調査"},
+  {"id":"O-RE-008","customerId":"C-008","name":"仮設電源設備","amount":7500000,"stage":"ニーズ確認","due":"2025-11-15","next":"ヒアリング"},
+  {"id":"O-RE-009","customerId":"C-009","name":"LED照明導入","amount":1200000,"stage":"提案中","due":"2025-08-25","next":"プレゼン"},
+  {"id":"O-RE-010","customerId":"C-010","name":"サーバー室電源効率化","amount":6500000,"stage":"契約準備","due":"2025-08-05","next":"契約書確認"}
 ];
 
 const tickets = [
@@ -173,7 +328,12 @@ const tickets = [
   {"id":"T-002","customerId":"C-002","type":"障害","priority":"高","status":"対応中","opened":"2025-07-08"},
   {"id":"T-003","customerId":"C-003","type":"工事","priority":"中","status":"予定","opened":"2025-07-01"},
   {"id":"T-004","customerId":"C-004","type":"問い合わせ","priority":"低","status":"完了","opened":"2025-06-28"},
-  {"id":"T-005","customerId":"C-005","type":"障害","priority":"高","status":"対応中","opened":"2025-07-07"}
+  {"id":"T-005","customerId":"C-005","type":"障害","priority":"高","status":"対応中","opened":"2025-07-07"},
+  {"id":"T-006","customerId":"C-006","type":"問い合わせ","priority":"中","status":"対応中","opened":"2025-07-10"},
+  {"id":"T-007","customerId":"C-007","type":"工事","priority":"高","status":"予定","opened":"2025-07-12"},
+  {"id":"T-008","customerId":"C-008","type":"障害","priority":"中","status":"対応中","opened":"2025-07-09"},
+  {"id":"T-009","customerId":"C-009","type":"問い合わせ","priority":"低","status":"完了","opened":"2025-07-02"},
+  {"id":"T-010","customerId":"C-010","type":"工事","priority":"中","status":"予定","opened":"2025-07-15"}
 ];
 
 // 現在選択されている顧客

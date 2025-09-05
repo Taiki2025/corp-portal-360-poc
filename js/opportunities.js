@@ -64,6 +64,71 @@ const customers = [
     "usageIds": ["U-2025-07-005"],
     "opportunityIds": ["O-RE-005"],
     "ticketIds": ["T-005"]
+  },
+  {
+    "id": "C-006",
+    "name": "福岡銀行",
+    "industry": "金融",
+    "size": "大",
+    "owner": "営業部 金融担当",
+    "tags": ["特別高圧", "金融", "重要顧客"],
+    "contractIds": ["K-1100-006"],
+    "billingIds": ["B-2025-07-006"],
+    "usageIds": ["U-2025-07-006"],
+    "opportunityIds": ["O-RE-006"],
+    "ticketIds": ["T-006"]
+  },
+  {
+    "id": "C-007",
+    "name": "宮崎リゾートホテル",
+    "industry": "観光",
+    "size": "中",
+    "owner": "施設管理部 担当",
+    "tags": ["高圧", "宿泊", "省エネ推進"],
+    "contractIds": ["K-1100-007"],
+    "billingIds": ["B-2025-07-007"],
+    "usageIds": ["U-2025-07-007"],
+    "opportunityIds": ["O-RE-007"],
+    "ticketIds": ["T-007"]
+  },
+  {
+    "id": "C-008",
+    "name": "熊本建設株式会社",
+    "industry": "建設",
+    "size": "大",
+    "owner": "土木部 担当",
+    "tags": ["高圧", "建設", "複数拠点"],
+    "contractIds": ["K-1100-008"],
+    "billingIds": ["B-2025-07-008"],
+    "usageIds": ["U-2025-07-008"],
+    "opportunityIds": ["O-RE-008"],
+    "ticketIds": ["T-008"]
+  },
+  {
+    "id": "C-009",
+    "name": "鹿児島保険サービス",
+    "industry": "保険",
+    "size": "小",
+    "owner": "営業所 担当",
+    "tags": ["低圧", "保険"],
+    "contractIds": ["K-1100-009"],
+    "billingIds": ["B-2025-07-009"],
+    "usageIds": ["U-2025-07-009"],
+    "opportunityIds": ["O-RE-009"],
+    "ticketIds": ["T-009"]
+  },
+  {
+    "id": "C-010",
+    "name": "佐賀ITソリューションズ",
+    "industry": "IT",
+    "size": "中",
+    "owner": "情報システム部",
+    "tags": ["高圧", "IT", "省エネ推進"],
+    "contractIds": ["K-1100-010"],
+    "billingIds": ["B-2025-07-010"],
+    "usageIds": ["U-2025-07-010"],
+    "opportunityIds": ["O-RE-010"],
+    "ticketIds": ["T-010"]
   }
 ];
 
@@ -72,7 +137,12 @@ const opportunities = [
   {"id":"O-RE-002","customerId":"C-002","name":"太陽光発電導入","amount":8000000,"stage":"初期検討","due":"2025-10-15","next":"現地調査"},
   {"id":"O-RE-003","customerId":"C-003","name":"UPS更新","amount":15000000,"stage":"契約準備","due":"2025-08-20","next":"契約書確認"},
   {"id":"O-RE-004","customerId":"C-004","name":"冷凍設備効率化","amount":7000000,"stage":"ニーズ確認","due":"2025-11-10","next":"ヒアリング"},
-  {"id":"O-RE-005","customerId":"C-005","name":"EV充電設備","amount":12000000,"stage":"提案中","due":"2025-09-15","next":"プレゼン"}
+  {"id":"O-RE-005","customerId":"C-005","name":"EV充電設備","amount":12000000,"stage":"提案中","due":"2025-09-15","next":"プレゼン"},
+  {"id":"O-RE-006","customerId":"C-006","name":"データセンター省エネ化","amount":18000000,"stage":"提案中","due":"2025-09-10","next":"見積提示"},
+  {"id":"O-RE-007","customerId":"C-007","name":"空調設備更新","amount":9500000,"stage":"初期検討","due":"2025-10-30","next":"現地調査"},
+  {"id":"O-RE-008","customerId":"C-008","name":"仮設電源設備","amount":7500000,"stage":"ニーズ確認","due":"2025-11-15","next":"ヒアリング"},
+  {"id":"O-RE-009","customerId":"C-009","name":"LED照明導入","amount":1200000,"stage":"提案中","due":"2025-08-25","next":"プレゼン"},
+  {"id":"O-RE-010","customerId":"C-010","name":"サーバー室電源効率化","amount":6500000,"stage":"契約準備","due":"2025-08-05","next":"契約書確認"}
 ];
 
 // ページ読み込み時の処理
