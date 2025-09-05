@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       font-family: 'Noto Sans JP', sans-serif;
@@ -19,6 +20,12 @@
   <header>
     <div class="header-container">
       <h1 class="header-title">九州電力 法人営業ポータル</h1>
+      <div class="search-container">
+        <div class="search-bar">
+          <input type="text" id="global-search" class="search-input" placeholder="顧客名、案件名、担当者名などで検索..." aria-label="検索">
+          <button id="search-button" class="search-button">検索</button>
+        </div>
+      </div>
       <div class="header-actions">
         <button class="header-button">ヘルプ</button>
         <button class="header-button">設定</button>
@@ -67,7 +74,11 @@
       <div class="customer-selector">
         <label for="customer-selector">顧客選択:</label>
         <select id="customer-selector" class="search-input">
-          <option value="">顧客を選択してください</option>
+          <option value="C-001">九州テック</option>
+          <option value="C-002">北海道物流</option>
+          <option value="C-003">東京データセンター</option>
+          <option value="C-004">大阪食品</option>
+          <option value="C-005">名古屋自動車</option>
         </select>
       </div>
     </div>
@@ -234,6 +245,103 @@
     &copy; 2024 九州電力株式会社
   </footer>
   
+  <!-- 検索モーダル -->
+  <div id="search-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">検索結果</h2>
+        <button id="close-search-modal" class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="search-filters">
+          <div class="filter-section">
+            <button id="toggle-advanced-filters" class="btn btn-sm btn-outline">高度なフィルター</button>
+          </div>
+          <div id="advanced-filters" class="advanced-filters" style="display: none;">
+            <div class="filter-row">
+              <div class="filter-group">
+                <label for="company-filter">企業名</label>
+                <input type="text" id="company-filter" class="filter-input" placeholder="企業名で絞り込み">
+              </div>
+              <div class="filter-group">
+                <label for="customer-filter">お客さま名</label>
+                <input type="text" id="customer-filter" class="filter-input" placeholder="担当者名で絞り込み">
+              </div>
+            </div>
+            <div class="filter-row">
+              <div class="filter-group">
+                <label for="genre-filter">ジャンル</label>
+                <select id="genre-filter" class="filter-select" multiple>
+                  <option value="製造">製造</option>
+                  <option value="物流">物流</option>
+                  <option value="IT">IT</option>
+                  <option value="食品">食品</option>
+                  <option value="自動車">自動車</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>期限</label>
+                <div class="date-range">
+                  <input type="date" id="due-from" class="filter-input date-input">
+                  <span>～</span>
+                  <input type="date" id="due-to" class="filter-input date-input">
+                </div>
+                <div class="date-shortcuts">
+                  <button class="date-shortcut" data-period="today">今日</button>
+                  <button class="date-shortcut" data-period="week">今週</button>
+                  <button class="date-shortcut" data-period="month">今月</button>
+                  <button class="date-shortcut" data-period="quarter">今四半期</button>
+                </div>
+              </div>
+            </div>
+            <div class="filter-actions">
+              <button id="apply-filters" class="btn btn-primary">適用</button>
+              <button id="reset-filters" class="btn btn-outline">リセット</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="search-results-header">
+          <div class="results-count"><span id="results-count">0</span>件の結果</div>
+          <div class="results-sort">
+            <label for="sort-select">並び替え:</label>
+            <select id="sort-select" class="filter-select">
+              <option value="relevance">関連度</option>
+              <option value="dueAsc">期限（昇順）</option>
+              <option value="dueDesc">期限（降順）</option>
+              <option value="updatedDesc">更新日</option>
+            </select>
+          </div>
+        </div>
+        
+        <div id="search-results" class="search-results">
+          <!-- 検索結果がここに表示されます -->
+          <div class="empty-state">
+            <p>検索結果がありません</p>
+            <p>別のキーワードで検索してみてください</p>
+            <p>例: 企業名、担当者名、案件名など</p>
+          </div>
+        </div>
+        
+        <div class="pagination">
+          <div class="pagination-info">
+            <span>表示件数:</span>
+            <select id="page-size" class="filter-select">
+              <option value="20">20件</option>
+              <option value="50">50件</option>
+              <option value="100">100件</option>
+            </select>
+          </div>
+          <div class="pagination-controls">
+            <button id="prev-page" class="btn btn-sm btn-outline" disabled>前へ</button>
+            <span id="page-info">1 / 1</span>
+            <button id="next-page" class="btn btn-sm btn-outline" disabled>次へ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>
